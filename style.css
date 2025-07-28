@@ -1,0 +1,199 @@
+:root {
+
+    /* colores */
+
+    --color-fondo-body: #f4d04e;
+    --color-blanco: #ffffff;
+    --color-negro: #121212;
+    --color-gris-texto: #7f7f7f;
+
+
+
+    /* Tipografía */
+    --fuente-principal: 'Figtree', sans-serif;
+
+    /* Sombra y bordes */
+    --sombra-card: 8px 8px 0px var(--color-negro);
+    --borde-card: 1px solid var(--color-negro);
+    --border-radius-card: 20px;
+    --border-radius-img: 10px;
+     --sombra-card2: 13px 13px 0px var(--color-negro);
+
+    /* Tamaños */
+    --ancho-card: 320px;
+    --espaciado-card: 24px;
+    --gap-elementos: 16px;
+
+    /* Texto */
+    --fs-titulo: 20px;
+    --fs-descripcion: 14px;
+    --fs-categoria: 14px;
+    --fs-autor: 14px;
+
+    --fw-bold: 600;
+    --fw-bolder: 800;
+
+
+}
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    background-color: var(--color-fondo-body);
+    font-family: var(--fuente-principal);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+
+}
+
+#conteiner {
+
+    border: var(--borde-card);
+    border-radius: var(--border-radius-card);
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-blanco);
+    margin: 10px;
+    box-shadow: var(--sombra-card);
+    padding: 30px;
+ transition: box-shadow 0.3s ease;
+
+}
+
+#card {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: var(--ancho-card);
+    gap: var(--gap-elementos);
+    justify-content: center;
+   align-items: center;
+
+
+}
+
+#info{
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-elementos);
+
+
+}
+
+#imagen img {
+
+
+    width: auto;
+
+}
+
+#card img {
+
+    border-radius: var(--border-radius-img);
+
+
+}
+
+#info h3 {
+display: flex;
+    align-items: start;
+    background-color: var(--color-fondo-body);
+    border-radius: 4px;
+    padding: 5px;
+    width: 82px;
+    height: 29px;
+    
+
+}
+
+#info p,
+#info h1 {
+  text-align: start;
+}
+
+
+#descripcion{
+
+    color: var(--color-gris-texto);
+    font-size: var(--fs-descripcion);
+
+}
+
+
+#avatar{
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  align-self: flex-start; /* 👈 esto rompe el centrado heredado del padre */
+  text-align: start;
+
+}
+#avatar img{
+
+    height: 32px;
+    width: 32px;
+
+
+}
+
+ #conteiner:hover  {
+    box-shadow: var(--sombra-card2) ;
+
+
+}
+
+#conteiner:hover h1 {
+  color: var(--color-fondo-body);
+  transition: color 0.3s ease;
+}
+
+
+/* 🖥️ Desktop (1440px o más) */
+@media (min-width: 1440px) {
+  :root {
+    /* Solo ajustamos fuentes y espacios, no el tamaño de la card */
+    --fs-titulo: 24px;
+    --fs-descripcion: 16px;
+    --fs-categoria: 16px;
+    --fs-autor: 16px;
+    --gap-elementos: 20px;
+    --espaciado-card: 32px;
+  }
+
+  #conteiner {
+    padding: var(--espaciado-card);
+  }
+
+  #info h1 {
+    font-size: var(--fs-titulo);
+  }
+
+  #descripcion {
+    font-size: var(--fs-descripcion);
+  }
+
+  #info h3,
+  #info p {
+    font-size: var(--fs-categoria);
+  }
+
+  #avatar h3 {
+    font-size: var(--fs-autor);
+  }
+}
+
